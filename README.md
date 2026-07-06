@@ -180,7 +180,11 @@ This package is a **consent primitive**. It intentionally does not:
 
 ## Provenance
 
-`consent_layer` was extracted from [Flair Health](https://www.flairhealth.app), a health data platform, as part of an effort to make consent enforcement transparent and auditable. The package is field-agnostic and contains no Flair-specific code, branding, or data structures.
+`consent_layer` was extracted from [Flair Health](https://flairhealth.app),
+a privacy-first health intelligence app for iOS. Flair uses this package
+in production. We open-sourced the enforcement layer so any app can adopt
+the same model — and so that every change to it is public, attributable,
+and auditable by anyone.
 
 ---
 
