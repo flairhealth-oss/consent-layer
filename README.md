@@ -11,13 +11,13 @@ A field-definable consent enforcement primitive for Flutter apps. Define the dat
 
 **The Trusted Intermediary Problem.** When an app collects user data and also enforces the user's consent preferences, the app is both the party being consented to *and* the party that controls the enforcement. A future update could quietly weaken the enforcement — and users would have no way to detect it.
 
-`consent_layer` solves this by extracting consent enforcement into a public, open-source package:
+`consent_layer` is a reference implementation of the consent primitive, extracted from Flair Health's private codebase into a public, open-source package:
 
-- **Any change to consent logic requires a public commit** in a named engineer's name.
-- **Third parties can audit** exactly what the enforcement does.
+- **Any change to this package requires a public commit** in a named engineer's name.
+- **Third parties can audit** exactly what this reference implementation does.
 - **Other apps can adopt** the same consent mechanism, creating a shared standard.
 
-The package's git log *is* the transparency log.
+This package's git log *is* the transparency log — for the package itself. As of this writing, Flair's shipped app does not yet depend on `consent_layer`; its production enforcement is a private superset that has diverged from this package since July 2026. Re-convergence (the app depending on this package directly) is planned but not yet complete. See [CONSENT_PROTOCOL.md](CONSENT_PROTOCOL.md) for the enforcement contract this package defines.
 
 ---
 
@@ -181,9 +181,13 @@ This package is a **consent primitive**. It intentionally does not:
 ## Provenance
 
 `consent_layer` was extracted from [Flair Health](https://flairhealth.app),
-a privacy-first health intelligence app for iOS. Flair uses this package
-in production. We open-sourced the enforcement layer so any app can adopt
-the same model — and so that every change to it is public, attributable,
+a privacy-first health intelligence app for iOS, as a reference
+implementation of Flair's consent primitive. Flair's shipped app does not
+yet depend on this package directly — its production consent enforcement
+currently lives in Flair's private codebase and has diverged from this
+package since the July 2026 extraction. Re-convergence is planned. We
+open-sourced the enforcement layer so any app can adopt the same model —
+and so that every future change to the primitive is public, attributable,
 and auditable by anyone.
 
 ---
