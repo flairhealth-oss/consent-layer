@@ -3,7 +3,7 @@ description: >-
   A field-definable consent enforcement primitive for Flutter apps.
   Detects schema changes, presents per-field consent review, and produces
   an auditable ConsentState. The caller enforces withdrawn-field substitution.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/flairhealth-oss/consent-layer
 repository: https://github.com/flairhealth-oss/consent-layer
 issue_tracker: https://github.com/flairhealth-oss/consent-layer/issues

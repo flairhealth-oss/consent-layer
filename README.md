@@ -11,13 +11,13 @@ A field-definable consent enforcement primitive for Flutter apps. Define the dat
 
 **The Trusted Intermediary Problem.** When an app collects user data and also enforces the user's consent preferences, the app is both the party being consented to *and* the party that controls the enforcement. A future update could quietly weaken the enforcement — and users would have no way to detect it.
 
-`consent_layer` solves this by extracting consent enforcement into a public, open-source package:
+`consent_layer` addresses this with a reference implementation of consent enforcement, published as a public, open-source package:
 
-- **Any change to consent logic requires a public commit** in a named engineer's name.
-- **Third parties can audit** exactly what the enforcement does.
+- **Any change to this package requires a public commit** in a named engineer's name.
+- **Third parties can audit** exactly what the package does.
 - **Other apps can adopt** the same consent mechanism, creating a shared standard.
 
-The package's git log *is* the transparency log.
+The package's git log *is* the transparency log for the package itself.
 
 ---
 
@@ -181,10 +181,10 @@ This package is a **consent primitive**. It intentionally does not:
 ## Provenance
 
 `consent_layer` was extracted from [Flair Health](https://flairhealth.app),
-a privacy-first health intelligence app for iOS. Flair uses this package
-in production. We open-sourced the enforcement layer so any app can adopt
-the same model — and so that every change to it is public, attributable,
-and auditable by anyone.
+a privacy-first health intelligence app for iOS, as a reference
+implementation of its consent primitive. Flair's app does not currently
+depend on this package. We open-sourced it so any app can adopt the same
+model, and so every change to it is public, attributable, and auditable.
 
 ---
 
